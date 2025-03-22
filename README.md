@@ -1,4 +1,4 @@
-# Fraud Analysis Dashboard
+# Fraud Detection
 
 ## Table of Contents
 - [About Project](#about-project)
@@ -87,11 +87,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact Me
 If you have any questions or would like to collaborate, feel free to reach out:
-- **Email:** [sanand03072005@gmail.com](mailto:sanand03072005@gmail.com)
+- **Email:** [sanand03072005@gmail.com](mailto:sanand03072005@gmail.com?subject=Inquiry%20About%20Fraud%20Analysis%20Dashboard&body=Hi%20Anand,%0A%0AI'm%20interested%20in%20learning%20more%20about%20the%20Fraud%20Detection%20you%20developed.%20I%20have%20some%20questions%20about%20how%20it%20handles%20fraud%20detection%2C%20data%20visualization%2C%20and%20security%20measures.%20Additionally%2C%20I%20would%20like%20to%20discuss%20potential%20collaborations.%0A%0AThank%20you!%0A%0ABest%20regards,%0A[Your%20Name])
 - **LinkedIn:** [Anand Sundaramoorthy](https://www.linkedin.com/in/anandsundaramoorthysa/)
-- **GitHub:** [anandsundaramoorthysa](https://github.com/anandsundaramoorthysa)
 
 ## Acknowledgments
 This project utilizes the following technologies and services:
 - [IPQualityScore API](https://www.ipqualityscore.com/) - Fraud Detection API
-
