@@ -1,4 +1,3 @@
-// server/controllers/fraudController.js
 const axios = require('axios');
 
 const analyzeFraudWithIPQS = async (req, res) => {

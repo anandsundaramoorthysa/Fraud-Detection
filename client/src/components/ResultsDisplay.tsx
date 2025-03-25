@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-// import { FraudData } from "@/utils/mockData"; // No longer directly using mockData
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell, PieChart, Pie, Legend } from "recharts";
 import { Shield, AlertCircle, Info } from "lucide-react";
 
@@ -61,7 +60,6 @@ const ResultsDisplay = ({ results }: ResultsDisplayProps) => {
             <TabsList className="grid grid-cols-3 mb-8">
               <TabsTrigger value="overview">Overview</TabsTrigger>
               <TabsTrigger value="details">Detailed Report</TabsTrigger>
-              {/* <TabsTrigger value="visualize">Visualization</TabsTrigger> */} {/* Visualization might need different data */}
             </TabsList>
 
             <TabsContent value="overview" className="space-y-6">
@@ -152,59 +150,6 @@ const ResultsDisplay = ({ results }: ResultsDisplayProps) => {
               </Card>
             </TabsContent>
 
-            {/* <TabsContent value="visualize" className="space-y-6">
-              <Card className="shadow-sm">
-                <CardHeader className="pb-2">
-                  <CardTitle className="text-lg">Fraud Confidence by Type</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="h-80">
-                    <ResponsiveContainer width="100%" height="100%">
-                      <BarChart data={confidenceData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-                        <XAxis dataKey="name" />
-                        <YAxis />
-                        <Tooltip />
-                        <Bar dataKey="value" name="Confidence Score">
-                          {confidenceData.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={getConfidenceColor(entry.value)} />
-                          ))}
-                        </Bar>
-                      </BarChart>
-                    </ResponsiveContainer>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-sm">
-                <CardHeader className="pb-2">
-                  <CardTitle className="text-lg">Fraud Type Distribution</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="h-80">
-                    <ResponsiveContainer width="100%" height="100%">
-                      <PieChart>
-                        <Pie
-                          data={confidenceData}
-                          cx="50%"
-                          cy="50%"
-                          outerRadius={100}
-                          fill="#8884d8"
-                          dataKey="value"
-                          nameKey="name"
-                          label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
-                        >
-                          {confidenceData.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={getConfidenceColor(entry.value)} />
-                          ))}
-                        </Pie>
-                        <Tooltip />
-                        <Legend />
-                      </PieChart>
-                    </ResponsiveContainer>
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent> */}
           </Tabs>
         </CardContent>
       </Card>

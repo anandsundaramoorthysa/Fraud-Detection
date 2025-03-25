@@ -4,7 +4,6 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Search, Mail, CreditCard, User, Globe } from "lucide-react";
-// import { fetchFraudResults } from "@/utils/mockData"; // Removed mock import
 import ResultsDisplay from "./ResultsDisplay";
 import { useToast } from "@/components/ui/use-toast";
 
@@ -16,10 +15,7 @@ const FraudDetectionForm = () => {
   const { toast } = useToast();
 
   const placeholders = {
-    transaction: "Enter transaction ID or amount",
     email: "Enter email address to check",
-    card: "Enter card number to verify",
-    account: "Enter account ID or username",
     ip: "Enter IP address to analyze",
   };
 
@@ -61,7 +57,7 @@ const FraudDetectionForm = () => {
       }
 
       const results = await response.json();
-      setFraudResults([results]); // Assuming the backend returns a single result object
+      setFraudResults([results]); 
 
       toast({
         title: "Analysis Complete",
@@ -82,8 +78,6 @@ const FraudDetectionForm = () => {
   const getIcon = () => {
     switch (activeTab) {
       case "email": return <Mail className="absolute left-3 top-3 h-4 w-4 text-gray-400 dark:text-gray-500" />;
-      case "card": return <CreditCard className="absolute left-3 top-3 h-4 w-4 text-gray-400 dark:text-gray-500" />;
-      case "account": return <User className="absolute left-3 top-3 h-4 w-4 text-gray-400 dark:text-gray-500" />;
       case "ip": return <Globe className="absolute left-3 top-3 h-4 w-4 text-gray-400 dark:text-gray-500" />;
       default: return <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400 dark:text-gray-500" />;
     }
@@ -108,15 +102,12 @@ const FraudDetectionForm = () => {
             onValueChange={setActiveTab}
             className="w-full"
           >
-            <TabsList className="grid grid-cols-5 mb-8 bg-gray-100/80 dark:bg-gray-800/50">
-              <TabsTrigger value="transaction" className="data-[state=active]:bg-white dark:data-[state=active]:bg-gray-700">Transaction</TabsTrigger>
+            <TabsList className="grid grid-cols-2 mb-8 bg-gray-100/80 dark:bg-gray-800/50">
               <TabsTrigger value="email" className="data-[state=active]:bg-white dark:data-[state=active]:bg-gray-700">Email</TabsTrigger>
-              <TabsTrigger value="card" className="data-[state=active]:bg-white dark:data-[state=active]:bg-gray-700">Card</TabsTrigger>
-              <TabsTrigger value="account" className="data-[state=active]:bg-white dark:data-[state=active]:bg-gray-700">Account</TabsTrigger>
               <TabsTrigger value="ip" className="data-[state=active]:bg-white dark:data-[state=active]:bg-gray-700">IP Address</TabsTrigger>
             </TabsList>
 
-            {["transaction", "email", "card", "account", "ip"].map((tab) => (
+            {["email", "ip"].map((tab) => (
               <TabsContent key={tab} value={tab} className="mt-0">
                 <form onSubmit={handleSearch} className="space-y-6">
                   <div className="relative">
