@@ -6,7 +6,7 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell, PieCha
 import { Shield, AlertCircle, Info } from "lucide-react";
 
 interface ResultsDisplayProps {
-  results: any; // Update the type to handle the IPQS response
+  results: any; 
 }
 
 const ResultsDisplay = ({ results }: ResultsDisplayProps) => {
@@ -28,10 +28,8 @@ const ResultsDisplay = ({ results }: ResultsDisplayProps) => {
 
   const result = Array.isArray(results) ? results[0] : results; // Handle both array and single object responses
 
-  // Calculate overall risk score based on fraud_score from IPQS (if available)
   const overallRiskScore = result?.fraud_score || 0;
 
-  // Get risk level text based on fraud_score
   const getRiskLevelText = (score: number) => {
     if (score >= 90) return "Critical";
     if (score >= 75) return "High";

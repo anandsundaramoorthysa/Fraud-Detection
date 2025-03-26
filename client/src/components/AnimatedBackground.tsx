@@ -23,7 +23,6 @@ const AnimatedBackground = ({ className = "" }: AnimatedBackgroundProps) => {
     window.addEventListener("resize", resizeCanvas);
     resizeCanvas();
 
-    // Create particles
     const particlesArray: Particle[] = [];
     const numberOfParticles = 50;
 

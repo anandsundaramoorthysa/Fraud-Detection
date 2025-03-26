@@ -14,7 +14,7 @@ const analyzeFraudWithIPQS = async (req, res) => {
       apiUrl = `https://ipqualityscore.com/api/json/ip/${apiKey}/${searchTerm}`;
     } else if (activeTab === 'email') {
       searchTerm = inputData.email;
-      apiUrl = `https://ipqualityscore.com/api/json/email/${apiKey}/${searchTerm}`; // Email Validation API
+      apiUrl = `https://ipqualityscore.com/api/json/email/${apiKey}/${searchTerm}`; 
     } else {
       return res.status(400).json({ error: `Analysis for tab "${activeTab}" is not yet implemented with IPQS for this example.` });
     }
@@ -42,7 +42,7 @@ const analyzeFraudWithIPQS = async (req, res) => {
     const ipqsData = ipqsResponse.data;
     console.log('Data being sent to frontend:', ipqsData);
 
-    res.json([ipqsData]); // Send as an array to be consistent with previous logic
+    res.json([ipqsData]); 
 
   } catch (error) {
     console.error('Error in analyzeFraudWithIPQS:', error);
